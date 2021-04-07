@@ -28,25 +28,47 @@ input {
 
 <body>
 <script>
-function myFunction() {
-  var hasil, uraian, a;
-    hasil = document.getElementById("jawaban");
-    hasil.innerHTML = "";
-	uraian = document.getElementById("penjelasan");
-    uraian.innerHTML = "";
+function fungkom_gof() {
+  var hasil1, uraian1, a;
+    hasil1 = document.getElementById("jawaban1");
+    hasil1.innerHTML = "";
+	uraian1 = document.getElementById("penjelasan1");
+    uraian1.innerHTML = "";
     a = document.getElementById("gof").value;
 
 	if (a >= 0 && a!="")
     {
 		var fa = a*a;
 		var gb = 2*fa+2;
-		hasil.innerHTML = gb ;
-		uraian.innerHTML = "(g o f)("+a+") = g(f("+a+")) = g("+fa+") = "+gb+" → ("+a+", "+gb+")"
+		hasil1.innerHTML = gb ;
+		uraian1.innerHTML = "(g o f)("+a+") = g(f("+a+")) = g("+fa+") = "+gb+" → ("+a+", "+gb+")"
 	}
 	else
     {
-        hasil.innerHTML = " ";
-		uraian.innerHTML = "Masukkan nilai yang benar.";
+        hasil1.innerHTML = " ";
+		uraian1.innerHTML = "Masukkan nilai yang benar.";
+    }
+}
+
+function fungkom_fog() {
+  var hasil2, uraian2, b;
+    hasil2 = document.getElementById("jawaban2");
+    hasil2.innerHTML = "";
+	uraian2 = document.getElementById("penjelasan2");
+    uraian2.innerHTML = "";
+    b = document.getElementById("fog").value;
+
+	if (b >= 0 && b!="")
+    {
+		var gb = 2*b+2;
+		var fa = gb*gb;
+		hasil2.innerHTML = fa ;
+		uraian2.innerHTML = "(f o g)("+b+") = f(g("+b+")) = f("+gb+") = "+fa+" → ("+b+", "+fa+")"
+	}
+	else
+    {
+        hasil2.innerHTML = " ";
+		uraian2.innerHTML = "Masukkan nilai yang benar.";
     }
 }
 </script>
@@ -54,7 +76,7 @@ function myFunction() {
 <table width="570" border="4" align="center" cellspacing="0" cellpadding="0" bgcolor="#F7FAFB" bordercolor="#6D5239">
   <tr>
     <td><blockquote>
-        <h3 align="center">Mari mencari nilai (g o f)</h3>
+        <h3 align="center">Mari mencari nilai (g o f) dan (f o g)</h3>
       <p>Diketahui himpunan A = {0, 1, 2, ...}, himpunan <br />
         B = {..., −2, −1, 0, 1, 2, ...}, dan
         himpunan C = {1, 2, 3, ...}.</p>
@@ -81,23 +103,39 @@ function myFunction() {
             <form>
               (g o f)(
                 <input id="gof" type="text" />
-              ) <input class="tombol" type="button" value="=" onClick="myFunction()"> 
+              ) <input class="tombol" type="button" value="=" onClick="fungkom_gof()"> 
               </form>
             </td>
-          <td width="330"><p id="jawaban"><br></p></td>
+          <td width="330"><p id="jawaban1"><br></p></td>
           </tr>
         <tr>
           <td colspan="2">
             <blockquote>
-              <p id="penjelasan"><br>
+              <p id="penjelasan1"><br>
               </p>
             </blockquote></td>
           </tr>
+        <tr>
+          <td width="145">
+            <form>
+              (f o g)(
+                <input id="fog" type="text" />
+              ) <input class="tombol" type="button" value="=" onClick="fungkom_fog()"> 
+             </form>          
+          </td>
+          <td width="330"><p id="jawaban2"><br></p></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <blockquote>
+              <p id="penjelasan2"><br>
+              </p>
+            </blockquote></td>
+        </tr>
       </table>
       <div class="tugas">
       <p>Buatlah tabel seperti di bawah ini dan tuliskan pada bukumu. <br />
-        Lalu, lengkapilah tabel tersebut. Ambil 5 nilai a saja.</p>
-
+        Lalu, lengkapilah tabel tersebut. Ambil 5 nilai a dan 5 nilai b saja.</p>
       <table width="173" height="171" border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
         <tr>
           <th width="52" scope="col">a</th>
@@ -106,6 +144,40 @@ function myFunction() {
         <tr>
           <td align="center">0</td>
           <td align="center">2</td>
+        </tr>
+        <tr>
+          <td align="center">...</td>
+          <td align="center">...</td>
+
+        </tr>
+        <tr>
+          <td align="center">...</td>
+          <td align="center">...</td>
+
+        </tr>
+        <tr>
+          <td align="center">...</td>
+          <td align="center">...</td>
+
+        </tr>
+        <tr>
+          <td align="center">...</td>
+          <td align="center">...</td>
+        </tr>
+        <tr>
+          <td align="center">...</td>
+          <td align="center">...</td>
+        </tr>
+      </table> 
+      <p>
+      <table width="173" height="171" border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+          <th width="52" scope="col">b</th>
+          <th width="115" scope="col">(f o g)(b)</th>
+        </tr>
+        <tr>
+          <td align="center">0</td>
+          <td align="center">4</td>
         </tr>
         <tr>
           <td align="center">...</td>
